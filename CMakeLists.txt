@@ -16,14 +16,15 @@ macro(find_commonlib_path)
 endmacro()
 
 macro(copy_build VARIABLE)
-add_custom_command(
-	string(CONCAT DST ${VARIABLE}/${PROJECT_NAME}/SKSE/Plugins/)
-	TARGET ${PROJECT_NAME}
-	POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${PROJECT_NAME}> ${DST}
-	COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_PDB_FILE:${PROJECT_NAME}> ${DST}
-)
+    string(CONCAT DST "${VARIABLE}/${PROJECT_NAME}/SKSE/Plugins/")
+    add_custom_command(
+        TARGET ${PROJECT_NAME}
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy "$<TARGET_FILE:${PROJECT_NAME}>" "${DST}"
+        COMMAND ${CMAKE_COMMAND} -E copy "$<TARGET_PDB_FILE:${PROJECT_NAME}>" "${DST}"
+    )
 endmacro()
+
 
 
 cmake_minimum_required(VERSION 3.20)
@@ -55,7 +56,7 @@ endif()
 find_commonlib_path()
 message(
 	STATUS
-	"Building ${NAME} ${VERSION} for ${SkyrimVersion} with ${CommonLibName} at ${CommonLibPath}."
+	"Building ${NAME} ${VERSION} for ${SkyrimVersion}"
 )
 
 if (DEFINED VCPKG_ROOT)

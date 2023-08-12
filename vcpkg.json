@@ -1,0 +1,14 @@
+{
+	"name": "sksetemplate",
+	"version-string": "1.0.0",
+	"description": "SKSE plugin template that logs INI contents",
+	"homepage": "https://github.com/dann1/SKSE_Template",
+	"license": "GPL-3.0-only",
+	"dependencies": [
+	  "boost-stl-interfaces",
+	  "clib-util",
+	  "rsm-binary-io",
+	  "spdlog",
+	  "xbyak"
+	]
+  }
