@@ -1,11 +1,10 @@
-#include "Settings.h"
+#include "manager.h"
 
 void MessageHandler(SKSE::MessagingInterface::Message* a_message)
 {
+	// Execute the following when receiving a message indicating that the game has been loaded
 	if (a_message->type == SKSE::MessagingInterface::kPostLoad) {
-		if (Settings::GetSingleton()->LoadSettings()) {
-			UI::Install();
-		}
+		Logic::Install();
 	}
 }
 

@@ -1,21 +1,19 @@
 #pragma once
 
-#include <string>
-
-class Settings {
+class Settings
+{
 public:
-    static Settings& GetSingleton();
+	bool console;
+	bool file;
+	std::string mark;
 
-    bool IsConsoleLoggingEnabled() const { return bConsole; }
-    bool IsFileLoggingEnabled() const { return bFile; }
-    const std::string& GetMark() const { return mark; }
+	void LoadSettings();
 
-private:
-    Settings();
-    Settings(const Settings&) = delete;
-    Settings& operator=(const Settings&) = delete;
+    [[nodiscard]] static Settings* GetSingleton()
+	{
+		static Settings singleton;
+		singleton.LoadSettings();
+		return std::addressof(singleton);
+	}
 
-    bool bConsole;
-    bool bFile;
-    std::string mark;
 };

@@ -1,20 +1,20 @@
 #include "Settings.h"
 
-Settings::Settings() {
-    CSimpleIniA ini;
-    ini.SetUnicode();
+void Settings::LoadSettings()
+{
+	CSimpleIniA ini;
 
-	SI_Error rc = ini.LoadFile("SKSE_Template.ini");
+	constexpr auto path = L"Data/SKSE/Plugins/SKSE_Template.ini";
+	ini.SetUnicode();
+
+	SI_Error rc = ini.LoadFile(path);
 	if (rc < 0) {
-        return nullptr;
-    }
+		logger::warn("Settings file not found, using default values");
+	}
 
-    bConsole = ini.GetBoolValue("Logging", "bConsole", true);
-    bFile = ini.GetBoolValue("Logging", "bFile", true);
-    mark = ini.GetValue("Logging", "Mark", "Hello World");
-}
+	const char* section = "Logging";
 
-Settings& Settings::GetSingleton() {
-    static Settings instance;
-    return instance;
+	console = ini.GetBoolValue(section, "bConsole", true);
+	file = ini.GetBoolValue(section, "bFile", true);
+	mark = ini.GetValue(section, "Mark", "Hello World");
 }
