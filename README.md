@@ -63,6 +63,6 @@ The provided INI file is not copied to the DLL destination nor the build directo
 
 ### Automatic FOMOD packaging
 
-When releasing a mod with sensitive installation options (like choosing the right DLL) to the Nexus, it is very convenient to create a [FOMOD](package). You can automatically generate it without even installing the FOMOD tool thanks to the [pack-skse-mod](https://github.com/adya/pack-skse-mod) utility.
+When releasing a mod with sensitive installation options (like choosing the right DLL) to the Nexus, it is very convenient to create a [FOMOD](https://www.nexusmods.com/fallout4/mods/6821). You can automatically generate it without even installing the FOMOD tool thanks to the [pack-skse-mod](https://github.com/adya/pack-skse-mod) utility.
 
 Enable github actions on the repository configuration to get automatic FOMOD generations. The [fomod](./images/fomod.png) will automatically select the proper DLL based on your game version. The FOMOD build will be triggered whenever a new commit is pushed to the master branch. This behavior is defined in [main.yml](.github/workflows/main.yml). After the build is [completed](./images/gh_actions.png) you can download the FOMOD installer from the Artifacts section.
