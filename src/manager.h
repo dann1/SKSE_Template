@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Logic
+namespace Manager
 {
-	void Install();
+	void Logic();
 }

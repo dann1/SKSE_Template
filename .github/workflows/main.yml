@@ -16,6 +16,6 @@ jobs:
       FOMOD_INCLUDE_PDB: true
       FOMOD_MOD_NAME: "SKSE_Template"
       FOMOD_MOD_AUTHOR: "dann1"
-      FOMOD_MOD_NEXUS_ID: "97729"
+      FOMOD_MOD_NEXUS_ID: "72085"
       FOMOD_REQUIRED_INSTALLATION_DIR: "Skyrim/Data"
       PUBLISH_ARCHIVE_TYPE: '7z'

@@ -1,5 +1,7 @@
 set(headers ${headers}
-	src/PCH.h
+	src/template/PCH.h
+	src/template/Init.h
+	src/template/SEVersion.h
 	src/Settings.h
 	src/manager.h
 )

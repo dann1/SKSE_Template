@@ -1,5 +1,6 @@
 #pragma once
 
+/// @brief Settings manager interface to get the DLL configuration
 class Settings
 {
 public:

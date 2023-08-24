@@ -1,9 +1,9 @@
 #include "Settings.h"
 
 // Plugin specific functionality called by the main.cpp file
-namespace Logic
+namespace Manager
 {
-	void Install()
+	void Logic()
 	{
 		// Load plugin configuration
 		const auto settings = Settings::GetSingleton();
@@ -22,5 +22,4 @@ namespace Logic
 			clogger->Print("=================================");
 		}
 	}
-
 }

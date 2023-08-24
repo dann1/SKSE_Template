@@ -1,5 +1,6 @@
 set(sources ${sources}
-	src/PCH.cpp
+	src/template/PCH.cpp
+	src/template/Init.cpp
 	src/Settings.cpp
 	src/manager.cpp
 	src/main.cpp
