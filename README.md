@@ -40,7 +40,7 @@ There is a configure preset you can select on the IDE to decide which Skyrim SE 
 Open a terminal and issue the following commands
 
 ```pwsh
-git clone https://github.com/dann1/SKSE_Template.git
+git clone --recursive https://github.com/dann1/SKSE_Template.git
 cd SKSE_Template
 cmake -B build -S . # debug
 cmake --build build --config Release # release
